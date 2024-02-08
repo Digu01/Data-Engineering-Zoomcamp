@@ -210,3 +210,17 @@ def test_output(output, *args) -> None:
     assert output is not None, 'The output is undefined'
 
 sql_taxi_data
+SELECT * FROM ny_taxi.yellow_cab_data LIMIT 10
+
+@test
+
+def test_output(output, *args) -> None:
+
+    """
+
+    Template code for testing the output of the block.
+
+    """
+
+    assert output is not None, 'The output is undefined'
+
