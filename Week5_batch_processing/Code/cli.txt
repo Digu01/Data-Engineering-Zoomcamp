@@ -1,0 +1,13 @@
+python3 06_spark_sql.py --input_green="data/pq/green/*/*" --input_yellow="data/pq/yellow/*/*" --output="data/report/revenue/"
+
+
+/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/bin/spark-submit --master="spark://Oluseguns-MacBook-Pro.local:7077" 06_spark_sql.py --input_green="data/pq/green/2021/*" --input_yellow="data/pq/yellow/2021/*"  --output="data/report-2021"
+
+--input_green=gs://dezoomcamp_2024_storage_bucket_radiant-gateway-412001/week5/pq/green/2021/*/ 
+--input_yellow=gs://dezoomcamp_2024_storage_bucket_radiant-gateway-412001/week5/pq/yellow/2021/*/
+--output=gs://dezoomcamp_2024_storage_bucket_radiant-gateway-412001/week5/report-2021
+
+
+gcloud dataproc jobs submit pyspark --cluster dezoomcamp-2024-cluster-radiant-gateway-412001 --region=us-west1 gs://dezoomcamp_2024_storage_bucket_radiant-gateway-412001/week5/code/06_spark_sql.py -- --input_green="gs://dezoomcamp_2024_storage_bucket_radiant-gateway-412001/week5/pq/green/2021/*/" --input_yellow="gs://dezoomcamp_2024_storage_bucket_radiant-gateway-412001/week5/pq/yellow/2021/*/" --output="gs://dezoomcamp_2024_storage_bucket_radiant-gateway-412001/week5/report-2021-cli"
+
+gcloud dataproc jobs submit pyspark --cluster dezoomcamp-2024-cluster-radiant-gateway-412001 --region=us-west1 --jars=gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar gs://dezoomcamp_2024_storage_bucket_radiant-gateway-412001/week5/code/06_spark_sql_big_query.py -- --input_green="gs://dezoomcamp_2024_storage_bucket_radiant-gateway-412001/week5/pq/green/2021/*/" --input_yellow="gs://dezoomcamp_2024_storage_bucket_radiant-gateway-412001/week5/pq/yellow/2021/*/" --output="all_trips_data.report_2021"
