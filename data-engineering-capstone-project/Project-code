@@ -1,1 +1,32 @@
 
+
+# Import libraries here
+import warnings
+
+import matplotlib.pyplot as plt
+import pandas as pd
+import plotly.express as px
+import wqet_grader
+from IPython.display import VimeoVideo
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error
+from sklearn.pipeline import Pipeline, make_pipeline
+from sklearn.utils.validation import check_is_fitted
+
+warnings.simplefilter(action="ignore", category=FutureWarning)
+wqet_grader.init("Project 2 Assessment")
+
+Write a wrangle function that takes the name of a CSV file as input and returns a DataFrame. The function should do the following steps:
+
+Subset the data in the CSV file and return only apartments in Mexico City ("Distrito Federal") that cost less than $100,000.
+Remove outliers by trimming the bottom and top 10% of properties in terms of "surface_covered_in_m2".
+Create separate "lat" and "lon" columns.
+Mexico City is divided into 15 boroughs. Create a "borough" feature from the "place_with_parent_names" column.
+Drop columns that are more than 50% null values.
+Drop columns containing low- or high-cardinality categorical values.
+Drop any columns that would constitute leakage for the target "price_aprox_usd".
+Drop any columns that would create issues of multicollinearity.
+
+
+
