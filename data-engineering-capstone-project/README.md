@@ -1,6 +1,6 @@
-Predicting Apartment Prices in Mexico City:
+#Predicting Apartment Prices in Mexico City:
 
-Preparation of Data for Apartment price in Mexico City.
+#Preparation of Data for Apartment price in Mexico City.
 Write a wrangle function that takes the name of a CSV file as input and returns a DataFrame. The function should do the following steps:
 
 Subset the data in the CSV file and return only apartments in Mexico City ("Distrito Federal") that cost less than $100,000.
@@ -14,4 +14,15 @@ Drop any columns that would create issues of multicollinearity.
 
 
 
-Use glob to create the list files. It should contain the filenames of all the Mexico City real estate CSVs in the ./data directory, except for mexico-city-test-features.csv
+Use glob to create the list files. It should contain the filenames of all the Mexico City real estate CSVs in the ./data directory, except for mexico-city-test-features.csv.
+
+Combine your wrangle function, a list comprehension, and pd.concat to create a DataFrame df. It should contain all the properties from the five CSVs in files.
+
+#Create a histogram showing the distribution of apartment prices ("price_aprox_usd") in df. Be sure to label the x-axis "Price [$]", the y-axis "Count", and give it the title "Distribution of Apartment Prices". Use Matplotlib (plt).
+
+![image](https://github.com/Digu01/Data-Engineering-Zoomcamp/assets/98606505/c6d55d80-ff6f-4615-ad54-f748442c9b3e)
+
+Create a scatter plot that shows apartment price ("price_aprox_usd") as a function of apartment size ("surface_covered_in_m2"). Be sure to label your x-axis "Area [sq meters]" and y-axis "Price [USD]". Your plot should have the title "Mexico City: Price vs. Area". Use Matplotlib (plt).
+
+
+
